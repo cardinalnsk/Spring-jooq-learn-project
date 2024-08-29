@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5420/postgres
+    username: postgres
+    password: postgres
+  sql:
+    init:
+      continue-on-error: true
+
+
+
+jooq:
+  generator:
+    target:
+      package-name: ru.cardinalnsk.jooq_test.models
+      directory: target/generated-sources/jooq
+    database:
+      name: org.jooq.meta.postgres.PostgresDatabase
+      with-includes: .*
+      with-input-schema: public
